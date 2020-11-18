@@ -3,7 +3,7 @@ import './signin.scss'
 
 import CustomInputText from '../custom-Input/custom_Input'
 import CustomButton from '../custom-button/custom-button'
-import { signInWithGoogle } from '../../firebase/firebase-util'
+import { auth, signInWithGoogle } from '../../firebase/firebase-util'
 
 const Signin = () => {
 
@@ -12,10 +12,16 @@ const Signin = () => {
         password: ''
     });
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
 
-        setState({ email: '', password: '' });
+        const {email, password} = state;
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            setState({ email: '', password: '' });
+        } catch (error) {
+            console.log(error);
+        }
 
     }
 

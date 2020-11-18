@@ -28,9 +28,6 @@ const App =()=> {
               ...snapShot.data()
             }
           });
-
-          console.log(state);
-          
         });
       }
       
