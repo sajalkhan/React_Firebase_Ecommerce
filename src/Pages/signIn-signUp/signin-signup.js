@@ -1,12 +1,14 @@
 import React from 'react'
 import './signin-signup.scss'
 
-import Signin from '../../Components/signIn/signin';
+import Signin from '../../Components/signIn/signin'
+import SignUp from '../../Components/signup/signup'
 
 const Signin_Signup =()=> {
     return (
-        <div>
+        <div className='signin-signup'>
             <Signin/>
+            <SignUp/>
         </div>
     )
 }
