@@ -42,7 +42,7 @@ const App =()=> {
 
   return (
     <div>
-      <Header currentUser ={state.currentUser}/>
+      <Header/>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
